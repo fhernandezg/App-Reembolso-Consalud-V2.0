@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+	<title>Reembolso Movil</title>
+	
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.3.2.min.css">
+        <link rel="stylesheet"  href="../css/style.css">
+	<script src="../js/comunes/jquery-2.0.3.min.js"></script>
+	<script src="../js/comunes/jquery.mobile-1.3.2.min.js"></script>
+	<script src="../js/comunes/comunes.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="home" data-title="home">
+
+            <div data-role="header" class="headerVerde" >    
+                <div class='headerBtn' >
+                    <img src="../img/logo-verde.png" width="60%" style="margin-left: 12%; margin-right: 4%;"  />
+                    <img src="../img/btn_close_header.png" width="10%" onclick="cerrarSesion();"   />
+                </div>
+                <strong>Menú</strong>
+            </div><!-- /header -->
+            <div class="contenido" data-role="content" style="padding-top: 38%;">	
+                <div data-role="fieldcontain" >    
+                    
+                    <!-- Fila 1 -->
+                    <div class="ui-grid-b">
+                            <!-- Terminos y Condiciones -->
+                    <div class="ui-block-a">
+                            <div class="ui-body ui-body-d">
+                                    <a href="terminos.html" data-ajax='false'>
+                                            <img src="../img/icn_terminos.png"  border="0" width="100%" alt="terminos y condiciones">
+                                            <h5>Términos y<br/> Condiciones</h5>
+                                    </a>
+                            </div>
+                    </div>
+
+                    <!-- Reembolsar -->
+                            <div class="ui-block-b">
+                                    <div class="ui-body ui-body-d">
+                                            <a href="menu_reembolso.html" data-ajax='false'>
+                                                    <img src="../img/icn_reembolsar.png"  border="0" width="100%" alt="reembolsar">
+                                                    <h5>Ingresar<br/> Reembolso</h5>
+                                            </a>
+                                    </div>
+                            </div>
+
+                            <!-- Ver Solicitudes -->
+                    <div class="ui-block-c">
+                            <div class="ui-body ui-body-d">
+                                    <a href="solicitudes.html" data-ajax='false'>
+                                            <img src="../img/icn_misreembolsos.png"  border="0" width="100%" alt="">
+                                            <h5>Mis<br/> Reembolsos</h5>
+                                    </a>
+                            </div>
+                    </div>
+                    </div>
+
+                   
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                </div>
+
+            </div><!-- /content -->
+
+</div><!-- /page-->
+
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/comunes/index.js"></script>
+<script type="text/javascript">
+    pageName = 'Menu Principal';
+    app.initialize();
+    
+   
+
+</script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+	<title>Reembolso Móvil</title>
+	
+        <link rel="stylesheet" href="../css/themes/base/jquery.ui.all.css">
+        <link rel="stylesheet" href="../css/demos.css">
+        
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.3.2.min.css">
+        <link rel="stylesheet"  href="../css/style.css">
+	<script src="../js/comunes/jquery-2.0.3.min.js"></script>
+	<script src="../js/comunes/jquery.mobile-1.3.2.min.js"></script>
+	<script src="../js/comunes/comunes.js"></script>
+        <script src="../js/reembolso.js"></script>
+        
+        
+        
+	<script src="../js/ui/jquery.ui.core.js"></script>
+	<script src="../js/ui/jquery.ui.widget.js"></script>
+	<script src="../js/ui/jquery.ui.datepicker.js"></script>
+	
+  
+        <script src="../js/modernizr.js"></script>
+        
+        <style>
+            .ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d {
+                width: 100%;
+            }
+            .ui-grid-a > *:nth-child(n) {
+                width: 100%;
+            }
+            .subTitulo {  
+                width: 100%;
+                z-index: 1;
+            }
+            /* == iPad/iPhone [portrait + landscape] == */
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px), 
+            @media only screen and (max-device-width: 480px) {
+                    .ui-mobile .ui-header, .ui-mobile .ui-footer {
+                        border: 0 none;
+                        margin-top: 0;
+                        position: absolute;
+                        top: 0;
+                    }
+                    .ui-loader .ui-icon {
+                        position: fixed;
+                        top: 40%;
+                        left: 40%;
+                        
+                    }
+            }
+            
+        </style>
+        
+        <script type="text/javascript">
+            function addSlashes(input) {
+                var v = input.value;
+                if (v.match(/^\d{2}$/) !== null) {
+                    input.value = v + '-';
+                } else if (v.match(/^\d{2}\-\d{2}$/) !== null) {
+                    input.value = v + '-';
+                }
+            }
+            
+           
+        </script>
+        
+</head>
+
+<body>
+
+<div data-role="page" id="home" data-title="home">
+
+    <div data-role="header" class="headerVerde" >    
+        <div class='headerBtn' >
+            <img src="../img/btn_home_header.png" width="10%" class="" onclick="window.location='menu.html';"   />
+            <img src="../img/logo-verde.png" width="60%" style="margin-left: 4%; margin-right: 4%;"  />
+            <img src="../img/btn_back_header.png" width="10%" class="" onclick="window.location='menu_reembolso.html';"   />
+            
+        </div>
+        <strong id="tituloReembolso"></strong>
+    </div><!-- /header -->
+
+    <div class="contenido reembolso" data-role="content" style="padding-top: 38%;">
+        
+        
+            <div class="ui-grid-a" >
+                <div class="ui-block-a" style="width:100%;">
+                    <label for='beneficiario' >Nombre Paciente (Beneficiario):</label>
+                    <select name="beneficiario" id="beneficiario" data-mini="true">
+
+                    </select>
+                    <input id="mycat" type="hidden" name="cat" value="" />
+                </div>
+                <div class="ui-block-a" style="width:100%;">
+                    <label id="NombrePrestadorTxt" for="nombrePrestador">Nombre Prestador:</label> 
+                    <input type="text" name="nombrePrestador" id="nombrePrestador" value=""  />
+                </div>
+                <div class="ui-block-a" style="width:100%;">
+                    <label id="RutPrestadorTxt" for="RutPrestador">Rut Prestador:</label> 
+                    <input type="text" name="RutPrestador" id="RutPrestador" onblur="setGionRutPrestador();" value="" />
+                </div>
+                <div class="ui-block-a" style="width:100%;">
+                    <label id="numeroBoletaTxt" for="numeroBoleta">Número Boleta:</label> 
+                    <input type="number" name="numeroBoleta" id="numeroBoleta" value=""  onkeypress="return permite(event, 'num');" />
+
+                </div>
+                <script type="text/javascript" >
+                    $(document).ready(function() {
+                        if (!Modernizr.inputtypes.date) {
+                            
+                            $(function() {
+                                //Array para dar formato en español
+                                 $.datepicker.regional['es'] = 
+                                 {
+                                 closeText: 'Cerrar', 
+                                 prevText: 'Previo', 
+                                 nextText: 'Próximo',
+
+                                 monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio',
+                                 'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                                 monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun',
+                                 'Jul','Ago','Sep','Oct','Nov','Dic'],
+                                 monthStatus: 'Ver otro mes', yearStatus: 'Ver otro año',
+                                 dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                                 dayNamesShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sáb'],
+                                 dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sa'],
+                                 dateFormat: 'dd/mm/yy', firstDay: 0, 
+                                 initStatus: 'Selecciona la fecha', isRTL: false};
+                                $.datepicker.setDefaults($.datepicker.regional['es']);
+
+                                //miDate: fecha de comienzo D=días | M=mes | Y=año
+                                //maxDate: fecha tope D=días | M=mes | Y=año
+                                   $( "#datepicker" ).datepicker({ minDate: "-1D", maxDate: "+1M +10D" });
+                                 });
+                            
+                            
+                            $( "#fechaBoleta" ).datepicker({
+                                beforeShow: function(input, inst)
+                                {
+                                    inst.dpDiv.css({marginTop: '0px', marginLeft: '0px'});
+                                }
+                            });
+                            
+                           $("#fechaBoleta").datepicker( "option", "dateFormat", "dd-mm-yy" );
+                           $("#fechaBoleta").attr("readonly","readonly");
+                           
+                        }else{
+                            //si soporta HTML5 Date
+                    
+                        }
+                    });
+                </script>
+                <div  class="ui-block-a" style="width:100%;">
+                    <label id="fechaBoletaTxt" for="fechaBoleta">Fecha de Boleta:</label> 
+                    <input type="date" name="fechaBoleta" id="fechaBoleta" value=""  />
+
+                </div>
+                <div class="ui-block-a" style="width:100%;">
+                    <label id="MontoPrestacionTxt" for="MontoPrestacion">Monto Prestación:</label> 
+                    <input type="number" name="MontoPrestacion" id="MontoPrestacion" value="" onkeypress="return permite(event, 'num');" />
+                </div>
+
+            </div>
+
+
+
+            <div class='subTitulo'><strong>Adjuntar Imágenes</strong></div>
+            <div class="ui-grid-a" style="width:100%;">
+                 <div class="ui-block-a" style="width:100%;">           
+                     <div class="center" style="margin: auto;text-align: left;width: 100%; float: left;">
+                         <label style="font-size: 15px;width: 100%">Imagen Boleta</label>
+                         <div class="center" style="margin:0 auto;width:100%;text-align:center;">
+                             <div style="float: left;margin: auto;text-align: center;width: 40%;"><img id="foto1" src="../img/camara.png" onclick="capturePhoto1Click();" width="100%" border="0" alt="foto1" style="cursor:pointer;"></div>
+                             <div id='smallImage1Content1' style="display: block; float: left; margin: 0 auto; text-align: center; width: 60%;"><img id="smallImage1"  src="" width="100%" border="0" /></div>
+                         </div>          
+                     </div>
+                 </div>
+                
+                 <div class="ui-block-a" id='segundaImagen' >
+                     <div class="center" style="margin: auto;text-align: left;width: 100%; float: left;">
+                         <label style="font-size: 15px;width: 100%">Imagen Orden Médica </label>
+                         <div class="center" style="margin:0 auto;width:100%;text-align:center;">
+                             <div style="float: left;margin: auto;text-align: center;width: 40%;"><img id="foto2" src="../img/camara.png" onclick="capturePhoto2Click();" width="100%" border="0" alt="foto1" style="cursor:pointer;"></div>
+                             <div id='smallImage1Content2' style="display: block; float: left; margin: 0 auto; text-align: center; width: 60%;"><img id="smallImage2"  src="" width="100%" border="0" /></div>
+                         </div>          
+                     </div>
+                 </div>
+                
+                <div class="ui-block-a" id='terceraImagen' >
+                     <div class="center" style="margin: auto;text-align: left;width: 100%; float: left;">
+                         <label style="font-size: 15px;width: 100%">Imagen Opcional </label>
+                         <div class="center" style="margin:0 auto;width:100%;text-align:center;">
+                             <div style="float: left;margin: auto;text-align: center;width: 40%;"><img id="foto3" src="../img/camara.png" onclick="capturePhoto3Click();" width="100%" border="0" alt="foto1" style="cursor:pointer;"></div>
+                             <div id='smallImage1Content3' style="display: block; float: left; margin: 0 auto; text-align: center; width: 60%;"><img id="smallImage3"  src="" width="100%" border="0" /></div>
+                         </div>          
+                     </div>
+                 </div>
+             </div>      
+
+             <div class='subTitulo'><strong>Datos de Contacto</strong></div>      
+             <div class="ui-grid-a" style="width:100%;">
+                 <div class="ui-block-a" style="width:100%;">  
+                     <label id="telefonoTxt" for="telefono">Teléfono:</label> 
+                     <input type="tel" name="telefono" id="telefono" value="" onkeypress="return permite(event, 'num');"/>
+                 </div>
+                 <div class="ui-block-a" style="width:100%;">
+                     <label id="emailTxt" for="email">Correo Electrónico:</label> 
+                     <input type="email" name="email" id="email" value="" />
+                 </div>
+             </div>
+
+             <div class='subTitulo'><strong>Forma de Pago</strong></div>     
+             <div class="ui-grid-a" style="width:100%;">
+                 
+                 <div class="ui-block-a" class="excedentesDiv" style="width:100%;">    
+                     <label  id='excedeText' class="excedentesDiv"></label> 
+                     <input id="excedentes" name="" data-theme="f" type="checkbox" class="excedentesDiv" >
+                    <label for="excedentes" class="excedentesDiv" >Reembolsar diferencia no bonificable con cargo a cuenta excedentes. </label>
+                </div>
+
+                 
+                 <div class="ui-block-a" style="width:100%;">  
+                     <div id="divPay" class="center" style=" margin: auto;text-align: left;width: 100%; float: left;">
+                         <select name="pay" id="pay" data-mini="true" onclick="msjDepo();">
+                             <option value="0" selected="selected" >Forma de Pago</option>
+                             <option value="CTACORRIENTE">Cuenta Corriente</option>
+                             <option value="CTAVISTA">Cuenta Vista o Rut</option>
+                             <!--<option value="CTAVISTA">Cuenta de Ahorro</option>-->
+                             <option value="REEMVISTA">Vale Vista BBVA</option>
+                         </select>
+                     </div>
+                 </div>
+             
+                 <div class="ui-block-a ocultador" style="width:100%;">
+                    <select name="banco" id="banco" data-mini="true" style="width: 100%">
+                    </select>
+                </div>
+                 
+                 <div class="ui-block-a ocultador" style="width:100%;">            
+                    <label id="NcuentaTxt" for="Ncuenta" class='ocultador' >Nº de Cuenta:</label> 
+                    <input type="number" name="Ncuenta" class='ocultador' id="Ncuenta" value="" onkeypress="return permite(event, 'num');" />
+                </div>
+
+                
+                
+                
+                   
+                
+                
+            </div>
+            
+            <div class='subTitulo'><strong>Información adicional:</strong></div>   
+            <div class="ui-grid-a">
+                
+                <div class="ui-block-a" style="width:100%;">
+                    <label for="comentario"></label>
+                    <textarea name="" id="comentario" placeholder="" rows="8"></textarea>
+                </div>
+                
+                <div class="ui-block-a" style="width:100%;">    
+                    <div class="icono"  style="margin:0 auto;text-align:center;width:40%;" ><img id="enviarReembolso" src="../img/enviar.png" border="0" width="100%" alt=""></div>
+                </div>
+
+            </div> 
+            
+
+    </div><!-- /content -->
+    
+</div><!-- /page-->
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/comunes/index.js"></script>
+<script type="text/javascript">
+    pageName = 'Reembolso - ' + tipoReembolso;
+    app.initialize();
+
+</script>
+
+</body>
+</html>

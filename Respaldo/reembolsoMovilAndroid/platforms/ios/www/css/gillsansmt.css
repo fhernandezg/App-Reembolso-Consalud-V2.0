@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'GillSansMTRegular';
+    src: url('../font/gillsansmt.eot');
+    src: url('../font/gillsansmt.eot') format('embedded-opentype'),
+         url('../font/gillsansmt.woff') format('woff'),
+         url('../font/gillsansmt.ttf') format('truetype'),
+         url('../font/gillsansmt.svg#GillSansMTRegular') format('svg');
+}

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="cl.enlacedesign.reembolsoMovil" version="1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Reembolso Movil</name>
+    <description>
+        Reembolso Movil Isapre Consalud S.A
+    </description>
+    <author email="dev@enlacedesign.cl" href="http://www.enlacedesign.cl">
+        Enlacedesign Ltda.
+    </author>
+    <content src="login.html" />
+    <access origin="*" />
+    
+    <feature name="GAPlugin" >
+        <param name="android-package" value="com.adobe.plugins.GAPlugin"/>
+    </feature>
+    
+    
+</widget>

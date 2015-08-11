@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Reembolso Movil</title>
+
+        <link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.3.2.min.css">
+        <link rel="stylesheet"  href="../css/style.css">
+        <script src="../js/comunes/jquery-2.0.3.min.js"></script>
+        <script src="../js/comunes/jquery.mobile-1.3.2.min.js"></script>
+        <script src="../js/comunes/comunes.js"></script>
+        <script>
+            function irApaginaConBackBtn(){
+                window.location = 'menu.html';
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <div data-role="page" id="home" data-title="home">
+
+            <div data-role="header" class="headerVerde" >    
+                <div class='headerBtn' >
+                    <img src="../img/btn_home_header.png" width="10%" class="" onclick="window.location='menu.html';"   />
+                    <img src="../img/logo-verde.png" width="60%" style="margin-left: 4%; margin-right: 16%;"  />
+                </div>
+                <strong>Reembolsos</strong>
+            </div><!-- /header -->
+
+            <div class="contenido" data-role="content" style="padding-top: 38%;">
+                <div data-role="fieldcontain" >    
+
+                    <div class="ui-grid-b">
+                        <!-- Consulta Médica -->
+                        <div class="ui-block-a">
+                            <div class="ui-body ui-body-d">
+                                <a href="reembolso.html" data-ajax="false" onclick="localStorage.tipoReembolso='Consulta Médica.';" >
+                                    <img src="../img/icn_consulta.png" border="0" width="100%" alt="">
+                                    <h5>Consulta<br/> Médica</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Exámenes -->
+                        <div class="ui-block-b">
+                            <div class="ui-body ui-body-d">
+                                    <a href="reembolso.html" data-ajax="false" onclick="localStorage.tipoReembolso='Exámenes y Procedimientos.';" >
+                                    <img src="../img/icn_examenes.png" border="0" width="100%" alt="">
+                                    <h5>Exámenes y <br/>Procedimientos</h5>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- farmacia -->
+                        <div class="ui-block-c">
+                            <div class="ui-body ui-body-d">
+                                <a href="reembolso.html" data-ajax="false" onclick="localStorage.tipoReembolso='Imagenología.';" >
+                                    <img src="../img/icn_imagenologia.png" border="0" width="100%" alt="">
+                                    <h5>Imagenología</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagenología -->
+                    <div class="ui-grid-b">
+                            <div class="ui-block-a">
+                                <div class="ui-body ui-body-d">
+                                        <a href="reembolso.html" data-ajax="false" onclick="localStorage.tipoReembolso='Óptica.';" >
+                                                <img src="../img/icn_optica.png" border="0" width="100%" alt="">
+                                                <h5>Óptica</h5>
+                                        </a>
+                                </div>
+                            </div>
+
+                            <!-- Servicios Opticos -->
+                            <div class="ui-block-b">
+                                <div class="ui-body ui-body-d">
+                                        <a href="reembolso.html" data-ajax="false" onclick="localStorage.tipoReembolso='Ortopedia.';" >
+                                                <img src="../img/icn_ortopedia.png" border="0" width="100%" alt="">
+                                                <h5>Ortopedia</h5>
+                                        </a>
+                                </div>
+                            </div>
+
+                            <!-- Ortopedia -->
+                            <div class="ui-block-c">
+                                <div class="ui-body ui-body-d">
+                                        <a href="reembolso.html" data-ajax="false" onclick="localStorage.tipoReembolso='Medicamentos.';" >
+                                                <img src="../img/icn_medicamentos.png" border="0" width="100%" alt="">
+                                                <h5>Medicamentos</h5>
+                                        </a>
+                                </div>
+                            </div>
+                    </div>
+
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                </div>
+
+            </div><!-- /content -->
+
+
+        </div><!-- /page-->
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script type="text/javascript" src="../js/comunes/index.js"></script>
+        <script type="text/javascript">
+                    pageName = 'Menu Reembolso';
+                    app.initialize();
+        </script>
+    </body>
+</html>

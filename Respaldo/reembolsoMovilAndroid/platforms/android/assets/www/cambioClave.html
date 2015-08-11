@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>Reembolso móvil </title>
+        <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.2.min.css">
+        <link rel="stylesheet"  href="css/style.css">
+        <script src="js/comunes/jquery-2.0.3.min.js"></script>
+        <script src="js/comunes/jquery.mobile-1.3.2.min.js"></script>
+        <script src="js/comunes/comunes.js"></script>
+        <script type="text/javascript">
+           rut = separaRut(getUrlVars()["rut"]);
+        </script>
+        <script src="js/login.js"></script>
+        <script src="js/terminos.js"></script>
+        
+        
+
+    </head>
+
+    <body>
+
+
+        <!-- *******************  CAMBIO DE CLAVE  ******************************************* -->
+        <div data-role="page" id="cambioClave" data-title="cambioClave">
+
+            <div data-role="header" class="headerVerde" >    
+                <div class='headerBtn' >
+                    <img src="img/logo-verde.png" width="60%" style="margin-left: 4%; margin-right: 4%;"  />
+                </div>
+                <strong>Definir Clave: </strong>
+            </div><!-- /header -->
+
+            <div class="contenido" data-role="content" style="padding-top: 38%;" >	  
+                    <div data-role="fieldcontain">
+                        <label>Has ingresado con una clave temporal de acceso. por favor personaliza tu clave.</label>
+
+                        <label for="passwordAC">Clave Actual:</label>
+                        <input type="password" name="passwordAC" id="passwordAC" value='' />
+                        <script type="text/javascript">$("#passwordAC").val(getUrlVars()["pass"]);</script>
+
+                        <label for="passwordCC">Ingresa tu nueva clave:</label>
+                        <input type="password" name="passwordCC" id="passwordCC" value=""  />
+
+                        <label for="passwordCC2">Confirma nueva clave:</label>
+                        <input type="password" name="passwordCC2" id="passwordCC2" value=""  />
+                    </div>
+                    <div id="cambiarClaveBtn" class="enviar" style="text-align: center;" ><img src="img/enviar.png" border="0" width="60%" alt=""></div>
+
+                <br/><br/><br/><br/>
+            </div><!-- /content -->
+
+        </div><!-- /page-->
+
+
+
+        
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/comunes/index.js"></script>
+        <script type="text/javascript">
+            pageName = 'Cambio Clave';
+            app.initialize();
+        </script>
+    </body>
+</html>
