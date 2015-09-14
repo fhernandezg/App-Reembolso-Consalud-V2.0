@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Reembolso Móvil</title>
 	
         <link rel="stylesheet" href="../css/themes/base/jquery.ui.all.css">
@@ -65,6 +66,12 @@
                 }
             }
             
+            function validarEmail( email ) {
+                expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if ( !expr.test(email) )
+                    Alert("Error: La dirección de correo " + email + " es incorrecta.");
+            }
+            
            
         </script>
         
@@ -90,26 +97,34 @@
             <div class="ui-grid-a" >
                 <div class="ui-block-a" style="width:100%;">
                     <label for='beneficiario' >Nombre Paciente (Beneficiario):</label>
-                    <select name="beneficiario" id="beneficiario" data-mini="true">
+                    <select name="beneficiario" id="beneficiario" data-mini="true" >
 
                     </select>
                     <input id="mycat" type="hidden" name="cat" value="" />
                 </div>
                 <div class="ui-block-a" style="width:100%;">
-                    <label id="NombrePrestadorTxt" for="nombrePrestador">Nombre Prestador:</label> 
-                    <input type="text" name="nombrePrestador" id="nombrePrestador" value=""  />
+                    <label id="NombrePrestadorTxt" for="nombrePrestador">Nombre Prestador:</label>
+                    <input type="text" name="nombrePrestador" id="nombrePrestador" value="" />
                 </div>
                 <div class="ui-block-a" style="width:100%;">
-                    <label id="RutPrestadorTxt" for="RutPrestador">Rut Prestador:</label> 
-                    <input type="text" name="RutPrestador" id="RutPrestador" onblur="setGionRutPrestador();" value="" />
+                    <label id="RutPrestadorTxt" for="RutPrestador">Rut Prestador:</label>
+                    <input type="text" name="RutPrestador" id="RutPrestador" onblur="setGionRutPrestador();" value=""/>
                 </div>
                 <div class="ui-block-a" style="width:100%;">
-                    <label id="numeroBoletaTxt" for="numeroBoleta">Número Boleta:</label> 
-                    <input type="number" name="numeroBoleta" id="numeroBoleta" value=""  onkeypress="return permite(event, 'num');" />
+                    <label id="numeroBoletaTxt" for="numeroBoleta">Número Boleta:</label>
+                    <input type="number" name="numeroBoleta" id="numeroBoleta" value=""  onkeypress="return permite(event, 'num');"/>
 
                 </div>
                 <script type="text/javascript" >
                     $(document).ready(function() {
+                        
+                        $('#email').focusout({
+                            var email = 'me@example.com';
+                            validarEmail($('#email').val()); 
+                        });
+                        
+                        
+                        
                         if (!Modernizr.inputtypes.date) {
                             
                             $(function() {
@@ -155,12 +170,12 @@
                     });
                 </script>
                 <div  class="ui-block-a" style="width:100%;">
-                    <label id="fechaBoletaTxt" for="fechaBoleta">Fecha de Boleta:</label> 
-                    <input type="date" name="fechaBoleta" id="fechaBoleta" value=""  />
+                    <label id="fechaBoletaTxt" for="fechaBoleta">Fecha de Boleta:</label>
+                    <input type="date" name="fechaBoleta" id="fechaBoleta" value="" placeholder="Fecha de boleta" />
 
                 </div>
                 <div class="ui-block-a" style="width:100%;">
-                    <label id="MontoPrestacionTxt" for="MontoPrestacion">Monto Prestación:</label> 
+                   <label id="MontoPrestacionTxt" for="MontoPrestacion">Monto Prestación:</label>
                     <input type="number" name="MontoPrestacion" id="MontoPrestacion" value="" onkeypress="return permite(event, 'num');" />
                 </div>
 
@@ -205,7 +220,7 @@
              <div class="ui-grid-a" style="width:100%;">
                  <div class="ui-block-a" style="width:100%;">  
                      <label id="telefonoTxt" for="telefono">Teléfono:</label> 
-                     <input type="tel" name="telefono" id="telefono" value="" onkeypress="return permite(event, 'num');"/>
+                     <input type="tel" name="telefono" id="telefono" maxlength="9" value="" onkeypress="return permite(event, 'num');"/>
                  </div>
                  <div class="ui-block-a" style="width:100%;">
                      <label id="emailTxt" for="email">Correo Electrónico:</label> 
@@ -262,7 +277,9 @@
                 </div>
                 
                 <div class="ui-block-a" style="width:100%;">    
-                    <div class="icono"  style="margin:0 auto;text-align:center;width:40%;" ><img id="enviarReembolso" src="../img/enviar.png" border="0" width="100%" alt=""></div>
+                    <div id="enviarBtn" class="enviar" style="text-align: center;" >
+                        <p>Enviar</p>
+                    </div>
                 </div>
 
             </div> 

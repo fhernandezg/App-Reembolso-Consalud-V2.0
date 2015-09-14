@@ -1,0 +1,413 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(gillsansmt.css);
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /* font-family: 'GillSansMTRegular' !important; */
+    font-family: 'Montserrat' !important;
+    color: #f5f5f5;
+    font-weight: normal;
+}
+.ui-page{
+    /*max-width: 800px;*/
+}
+
+.headerVerde{
+    background: none;
+    width: 100%;
+    background-size: 100%; 
+/*     background-image: url("../img/bg-header.png");
+background-repeat: no-repeat; */
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+
+}
+.headerVerde .title-section{
+    float: left;
+    font-family: 'Montserrat' !important;
+    padding: 4% 5%;
+    background-color: #eff9f8;
+    width: 90%;
+    text-align: left;
+    color: teal;
+}
+.headerVerde strong{
+    position: relative;
+}
+.headerVerde strong:before{
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #fecc2f;
+}
+.btn-home{
+    margin-top: 15%;
+    position: absolute;
+    left: 2%;
+}
+.headerBtn{
+/*    margin-bottom: 5%;
+margin-top: 3%;
+width: 100%; */
+    position: relative;
+    padding: 4% 0;
+    background: teal;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.headerBtn .logo-sm{
+    width: 60%;
+}
+.headerBtn .back-btn{
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 15%;
+}
+.logout-btn{
+    position: absolute;
+    right: 0;
+    top: 15%;
+    width: 15%;
+}
+.ui-checkbox label span {
+    border: none;
+}
+.ui-btn-icon-left > .ui-btn-inner > .ui-icon, .ui-btn-icon-right > .ui-btn-inner > .ui-icon{
+    background-color: #424242;
+}
+.btn-back{
+    margin-top: 15%;
+    position: absolute;
+    right: 2%;
+}
+.contenido{
+    background: rgba(255,255,255,.9);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.clr {
+    clear: both;
+}
+.logo {
+    background-color: #fff;
+    background-image: url(../img/header.png);
+    background-attachment: scroll, fixed, scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5% 15%;
+}
+
+     
+.titulo {
+    background-image: url(../img/body1.png);
+    background-attachment: scroll, fixed, scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 1% 5% 1%;
+    width: 90%;
+}
+.titulo16 h1{
+    background-image: url(../img/body1.png);
+    background-attachment: scroll, fixed, scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 1% 5% 1%;
+    width: 90%;
+    font-size: 16px;
+}
+
+
+
+h1 {
+    text-transform: uppercase;
+    color: #595959;
+    font-weight: bold;
+    font-family: 'GillSansMTRegular' !important;
+}
+
+h2 {
+    color: #f5f5f5;
+    font-weight: bold;
+    font-family: 'GillSansMTRegular' !important;
+}
+
+h3 {
+    text-shadow: none !important;
+}
+
+h5 {
+    color: #595959;
+    font-weight: normal;
+    font-family: 'GillSansMTRegular' !important;
+    text-shadow: none !important;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.ui-page{
+    width: 100%;
+    /* background-size: 100%; 
+    background-image: url("../img/bg2.jpg");
+    background-repeat: repeat; 
+    background: #eff9f8;*/
+    background: #fff;
+}
+
+.olvidoClaveLink{ 
+    float: left; 
+    position: relative; 
+    width: 100%; 
+    text-align: center;
+    margin-top: 30%;
+    font-size: 1em;
+}
+
+.contentenidoBG {
+
+}
+.ui-body-c, .ui-overlay-c{
+    /*color: #F2F2F2;*/
+    color: #595959;
+    text-shadow: none;
+}
+.ui-body-c .ui-link, .ui-body-c .ui-link:active, .ui-body-c  .ui-link:hover, .ui-body-c  .ui-link:visited  {
+    color: #00afaa;
+    text-decoration: none;
+    text-align: center;
+}
+.contentenido {
+    height: 100%;
+    left: 0;
+    overflow: scroll;
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+
+.ui-mobile .ui-header, .ui-mobile .ui-footer{
+   border: 0 none;
+   position: fixed;
+   top: 0px;
+   margin-top: 0px;
+}
+
+/**
+* FOOTER
+*/
+.footer {
+    /*background-attachment: scroll, fixed, scroll;
+    background-clip: border-box;
+    background-color: #000000;
+    background-image: url("../img/footer.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    bottom: 0;
+    left: 0;
+    padding: 6% 8%;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+}
+
+.icono {
+    height: 50%;
+    width: 13%;
+    text-align: center;
+}
+
+.icono.left {
+    float: left;
+}
+.icono.right {
+    float: right;
+}
+.icono.center {
+    margin: 0 auto;
+}
+
+div.ui-input-text input.ui-input-text, div.ui-input-text textarea.ui-input-text, .ui-input-search input.ui-input-text{
+   text-shadow: none; 
+   text-align: center;
+   font-weight: 700;
+   font-size: 11px;
+   padding: 10px 0;
+}
+.ui-link span {
+    color: #333333;
+    display: block;
+    font-family: 'GillSansMTRegular' !important;
+    text-align: center;
+    text-shadow: none !important;
+    word-wrap: break-word;
+    font-size: 75%;
+}
+#content {
+    height: 0;
+    left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.ui-body-d, .ui-overlay-d{
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+.ui-body-d .ui-link {
+    text-decoration: none;
+}
+.texto {
+    color: #161615;
+    font-family: 'GillSansMTRegular' !important;
+    text-shadow: none !important;
+}
+.icono.center {
+    margin: 0 auto;
+}
+.ui-field-contain:last-child {
+    margin: 0px;
+}
+.ui-br {
+    border-style: none;
+}
+.subTitulo{
+    background-color: #3D3D3D;
+    color: #F5F5F5;
+    left: -25%;
+    padding-bottom: 2%;
+    padding-left: 30%;
+    padding-top: 2%;
+    position: relative;
+    text-align: left;
+    width: 149%;
+    z-index: 998;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+.ui-grid-a>:nth-child(n) {
+    width: 100%;
+}
+.ocultador{
+    display: none;
+}
+div.ui-input-text input.ui-input-text, div.ui-input-text textarea.ui-input-text, .ui-input-search input.ui-input-text{
+    color: #595959;
+}
+textarea.ui-input-text {
+    color: #595959;
+}
+
+.terminos_off{
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.terminos_on{
+    opacity:1;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.terminos_hide{
+    display:none;
+}
+.existe{
+    display:none;
+}
+.ui-loader-default {
+    background: none repeat scroll 0 center rgba(0, 0, 0, 0);
+    opacity: 0.18;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+.ui-loader {
+    border: 0 none;
+    display: none;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+    left: 0px;
+    top: 0px;
+}
+.ui-loader .ui-icon {
+    background-color: #000000;
+    border-radius: 36px;
+    display: block;
+    height: 44px;
+    margin: 0 auto;
+    padding: 1px;
+    position: relative;
+    top: 40%;
+    width: 44px;
+}
+.ui-li-desc {
+    text-overflow: inherit;
+    white-space: pre;
+    width: 100%;
+}
+/*MODS 2015*/
+.text-center{
+    text-align: center;
+}
+.ui-input-text{
+    border-radius: 2em;
+}
+#logear, #enviarClave, #cambiarClaveBtn{
+    background: teal;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    border-radius: 50px;
+    margin: .5em 0;
+}
+
+.ui-focus,.ui-btn:focus {
+    box-shadow: none !important;
+}
+
+.ui-input-text.ui-focus,.ui-input-search.ui-focus {
+    box-shadow: none !important;
+}
+.ui-btn-corner-all{
+    border-radius: 2em;
+}
+
+/* <JUST FOR VISUALIZATION, REMOVE AFTER EDITING> */
+html, body{
+    width: 320px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page,.headerVerde{
+    width: 320px !important;
+}
+/* </JUST FOR VISUALIZATION, REMOVE AFTER EDITING> */
+#loginHome{
+    background: url(../img/bg.png);
+}

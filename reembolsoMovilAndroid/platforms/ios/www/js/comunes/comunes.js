@@ -1,6 +1,6 @@
 //Google Analitycs ID AU-25575058-6
-var urlWS = 'http://dev.enlacedesign.cl/consalud/';
-var ambiente = 0; // 0 = testing ; 1 = Produccion
+//var urlWS = 'http://dev.enlacedesign.cl/consalud/';
+//var ambiente = 0; // 0 = testing ; 1 = Produccion
 
     /*Ambiente de _Testing*/
     var urlSGW = 'http://tredsalud.consalud.cl/sfc/sgw.asmx';

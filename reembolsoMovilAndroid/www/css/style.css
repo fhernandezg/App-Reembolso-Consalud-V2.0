@@ -1,16 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(gillsansmt.css);
 *{
     margin: 0px;
     padding: 0px;
 }
 
-
-
 body {
-    font-family: 'GillSansMTRegular' !important;
+    /* font-family: 'GillSansMTRegular' !important; */
+    font-family: 'Montserrat' !important;
     color: #f5f5f5;
     font-weight: normal;
-    
 }
 .ui-page{
     /*max-width: 800px;*/
@@ -20,21 +19,33 @@ body {
     background: none;
     width: 100%;
     background-size: 100%; 
-    background-image: url("../img/bg-header.png");
-    background-repeat: no-repeat;
+/*     background-image: url("../img/bg-header.png");
+background-repeat: no-repeat; */
     text-align: center;
     position: fixed;
     z-index: 999;
-    
-    
+
 }
-.headerVerde strong{
-    float: right;
-    margin-bottom: 6%;
-    position: relative;
-    right: 2%;
+.headerVerde .title-section{
+    float: left;
+    font-family: 'Montserrat' !important;
+    padding: 4% 5%;
+    background-color: #eff9f8;
     width: 90%;
     text-align: left;
+    color: teal;
+}
+.headerVerde strong{
+    position: relative;
+}
+.headerVerde strong:before{
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #fecc2f;
 }
 .btn-home{
     margin-top: 15%;
@@ -42,10 +53,28 @@ body {
     left: 2%;
 }
 .headerBtn{
-   margin-bottom: 5%;
-   margin-top: 3%;
-   width: 100%;
-    
+/*    margin-bottom: 5%;
+margin-top: 3%;
+width: 100%; */
+    position: relative;
+    padding: 4% 0;
+    background: teal;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.headerBtn .logo-sm{
+    width: 60%;
+}
+.headerBtn .back-btn{
+    position: absolute;
+    left: 0;
+    top: 20%;
+    width: 15%;
+}
+.logout-btn{
+    position: absolute;
+    right: 0;
+    top: 15%;
+    width: 15%;
 }
 .ui-checkbox label span {
     border: none;
@@ -59,7 +88,9 @@ body {
     right: 2%;
 }
 .contenido{
-    padding-top: 25%;
+    /* background: rgba(255,255,255,.9); */
+    margin: 10px;
+    border-radius: 10px;
 }
 
 .clr {
@@ -132,9 +163,11 @@ h5 {
 
 .ui-page{
     width: 100%;
-    background-size: 100%; 
+    /* background-size: 100%; 
     background-image: url("../img/bg2.jpg");
-    background-repeat: repeat;
+    background-repeat: repeat; 
+    background: #eff9f8;*/
+    background: #fff;
 }
 
 .olvidoClaveLink{ 
@@ -151,11 +184,12 @@ h5 {
 }
 .ui-body-c, .ui-overlay-c{
     /*color: #F2F2F2;*/
-    color: #595959;
+    color: #fff;
     text-shadow: none;
 }
 .ui-body-c .ui-link, .ui-body-c .ui-link:active, .ui-body-c  .ui-link:hover, .ui-body-c  .ui-link:visited  {
-    color: #00afaa;
+    font-family: 'Montserrat' !important;
+    color: #82D6D6;
     text-decoration: none;
     text-align: center;
 }
@@ -217,7 +251,10 @@ h5 {
 
 div.ui-input-text input.ui-input-text, div.ui-input-text textarea.ui-input-text, .ui-input-search input.ui-input-text{
    text-shadow: none; 
-  
+   text-align: center;
+   font-weight: 700;
+   font-size: 11px;
+   padding: 10px 0;
 }
 .ui-link span {
     color: #333333;
@@ -281,7 +318,7 @@ div.ui-input-text input.ui-input-text, div.ui-input-text textarea.ui-input-text,
     display: none;
 }
 div.ui-input-text input.ui-input-text, div.ui-input-text textarea.ui-input-text, .ui-input-search input.ui-input-text{
-    color: #595959;
+    color: #fff;
 }
 textarea.ui-input-text {
     color: #595959;
@@ -332,4 +369,90 @@ textarea.ui-input-text {
     text-overflow: inherit;
     white-space: pre;
     width: 100%;
+}
+/*MODS 2015*/
+.text-center{
+    text-align: center;
+}
+.ui-input-text{
+    border-radius: 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-right: 1px solid transparent;
+    background: transparent;
+    color: #fff;
+    border-left: 1px solid transparent;
+    box-shadow: none;
+}
+#logear, #enviarClave, #cambiarClaveBtn, #enviarBtn{
+    font-family: 'Montserrat' !important;
+    background: #5BB9B9;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    border-radius: 0;
+    margin: .5em 0;
+}
+
+.ui-focus,.ui-btn:focus {
+    box-shadow: none !important;
+}
+
+.ui-input-text.ui-focus,.ui-input-search.ui-focus {
+    box-shadow: none !important;
+}
+.ui-btn-corner-all{
+    border-radius: 2em;
+}
+
+#loginHome, #home, #cambioClave, #recuperaClave {
+    background: url(../img/bg.png);
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Montserrat' !important;
+   color: #fff;
+}
+:-moz-placeholder { /* Firefox 18- */
+    font-family: 'Montserrat' !important;
+   color: #fff;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    font-family: 'Montserrat' !important;
+   color: #fff;  
+}
+:-ms-input-placeholder {
+font-family: 'Montserrat' !important;  
+   color: #fff;  
+}
+.reembolso label.ui-input-text {
+    border-radius: 0;
+    border-top: 0px solid transparent !important;
+    border-bottom: 0px solid transparent !important;
+    background: transparent !important;
+    color: #fff;
+    box-shadow: none;
+    background-color: #fff !important;
+    color: teal;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 1.3em;
+    margin: 0px;
+    border-radius: 3px 3px 0 0;
+    padding: 5px;
+}
+.reembolso .ui-input-text {
+    border-radius: 0;
+    border-top: 0px solid transparent !important;
+    border-bottom: 0px solid transparent !important;
+    background: teal;
+    box-shadow: none;
+    margin: 0 0 5px;
+    text-align: left !important;
+}
+.reembolso .ui-select{
+    margin-bottom: 15px;
 }

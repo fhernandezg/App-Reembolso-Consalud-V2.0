@@ -3,9 +3,9 @@
 //var ambiente = 0; // 0 = testing ; 1 = Produccion
 
     /*Ambiente de _Testing*/
-    var urlSGW = 'http://redsalud.consalud.cl/sfc/sgw.asmx';
-    var urlSGWTK = 'http://redsalud.consalud.cl/sfc/sgw_md.asmx';
-    var urlMobile = 'http://redsalud.consalud.cl/Mobile/ServicioAfiliadoConsalud.asmx';
+    var urlSGW = 'http://tredsalud.consalud.cl/sfc/sgw.asmx';
+    var urlSGWTK = 'http://tredsalud.consalud.cl/sfc/sgw_md.asmx';
+    var urlMobile = 'http://tredsalud.consalud.cl/Mobile/ServicioAfiliadoConsalud.asmx';
 
 
 var rut = 0;
