@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		04EFB7B3F78A429A9332BF27 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DE6C5C21D4480A9834C080 /* CDVConnection.m */; };
 		0DD170D2CFB24A59A74BA027 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF7F953C6F54C0FB5957CC9 /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -656,6 +657,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
@@ -702,6 +704,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
