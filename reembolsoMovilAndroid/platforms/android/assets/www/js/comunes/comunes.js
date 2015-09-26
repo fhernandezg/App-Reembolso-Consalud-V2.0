@@ -86,6 +86,8 @@ function alertDismissed() {
 //window.location = "menu.html";
 }
 function processError(data, status) {
+    alert(data);
+    alert(status);
     navigator.notification.confirm(
             'Lo sentimos no se pudo realizar la operación. Por favor, verifique su conexión a red de datos.', // message
             onConfirmOK, 

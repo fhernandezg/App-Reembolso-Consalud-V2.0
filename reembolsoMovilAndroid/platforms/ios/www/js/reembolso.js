@@ -265,7 +265,7 @@ $(document).ready(function(){
             
       });
       
-    $("#enviarReembolso").click(function() {
+    $("#enviarBtn").click(function() {
       
       //VALIDANDO QUE ESTEN TODOS LOS DATOS INGRESADOS
         if((rutBeneficiario!='')&&($("#RutPrestador").val()!='')&&($("#nombrePrestador").val()!='')&&($("#fechaBoleta").val()!='')&&($("#NumeroBoleta").val()!='')&&($("#MontoPrestacion").val()!='')&&($("#telefono").val()!='')&&($("#email").val()!='')&&(tipoCuentaSeleccionada!='')){
@@ -803,6 +803,7 @@ function ValidarDuplicidad(){
                             if($(req.responseXML).find('ErrorMessage').text() == "Ha ocurrido un problema al ingresar el reembolso. Por favor, verifique su conexión."){
                                 Alert('Ingrese un RUT de un prestador válido e intente nuevamente');
                             }else{
+                                console.log(req.responseXML);
                                 Alert($(req.responseXML).find('ErrorMessage').text());
                             }
                             $.mobile.hidePageLoadingMsg();
@@ -1004,6 +1005,8 @@ function SubirImagen(idReembolso){
 ';
     
     //iniciaDebug(soapRequest,'fotos');
+    console.log(urlMobile+"?op=SubirImagen");
+    console.log(soapRequest);
     
     $.ajax({
         type: "POST",
@@ -1034,6 +1037,10 @@ function SubirImagen(idReembolso){
                     }
                     
                 }else{
+                    console.log(status);
+                    console.log(data);
+                    console.log(req);
+
                     Alert('No se pudo subir las imágenes. Por favor, verifique su conexión.');
                     $.mobile.hidePageLoadingMsg();
                     $(".contenido").css("display", "block");

@@ -82,6 +82,8 @@ function setGionRutClave(){
 }
 // ******  Validacion de usuario para el inicio de sesion.   **********************
 function login() {
+    console.log(urlSGWTK + "?op=AutenticarBaseDatos");
+    
     $.mobile.showPageLoadingMsg();
     if (($("#rut").val() != '') && ($("#password").val() != '')) {
         if (!Fn.validaRut($('#rut').val())) {
