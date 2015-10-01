@@ -3,9 +3,9 @@
 //var ambiente = 0; // 0 = testing ; 1 = Produccion
 
     /*Ambiente de _Testing*/
-    var urlSGW = 'http://tredsalud.consalud.cl/sfc/sgw.asmx';
-    var urlSGWTK = 'http://tredsalud.consalud.cl/sfc/sgw_md.asmx';
-    var urlMobile = 'http://tredsalud.consalud.cl/Mobile/ServicioAfiliadoConsalud.asmx';
+    var urlSGW = 'http://redsalud.consalud.cl/sfc/sgw.asmx';
+    var urlSGWTK = 'http://redsalud.consalud.cl/sfc/sgw_md.asmx';
+    var urlMobile = 'http://redsalud.consalud.cl/Mobile/ServicioAfiliadoConsalud.asmx';
 
 
 var rut = 0;
@@ -86,8 +86,8 @@ function alertDismissed() {
 //window.location = "menu.html";
 }
 function processError(data, status) {
-    alert(data);
-    alert(status);
+    console.log(data);
+    console.log(status);
     navigator.notification.confirm(
             'Lo sentimos no se pudo realizar la operación. Por favor, verifique su conexión a red de datos.', // message
             onConfirmOK, 
