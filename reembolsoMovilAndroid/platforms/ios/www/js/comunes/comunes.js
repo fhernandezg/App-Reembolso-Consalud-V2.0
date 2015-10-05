@@ -1,12 +1,17 @@
 //Google Analitycs ID AU-25575058-6
-//var urlWS = 'http://dev.enlacedesign.cl/consalud/';
-//var ambiente = 0; // 0 = testing ; 1 = Produccion
 
-    /*Ambiente de _Testing*/
-    var urlSGW = 'http://redsalud.consalud.cl/sfc/sgw.asmx';
-    var urlSGWTK = 'http://redsalud.consalud.cl/sfc/sgw_md.asmx';
-    var urlMobile = 'http://redsalud.consalud.cl/Mobile/ServicioAfiliadoConsalud.asmx';
+// Cambiar ambiente.
+// 0 = testing ; 1 = produccion
+var ambiente = 0; 
 
+// URL de los servicios.
+var urlBase = (ambiente === 1) 
+    ? 'http://redsalud.consalud.cl'
+    : 'http://tredsalud.consalud.cl';
+
+var urlSGW      = urlBase + '/sfc/sgw.asmx';
+var urlSGWTK    = urlBase + '/sfc/sgw_md.asmx';
+var urlMobile   = urlBase + '/Mobile/ServicioAfiliadoConsalud.asmx';
 
 var rut = 0;
 var debug = '';

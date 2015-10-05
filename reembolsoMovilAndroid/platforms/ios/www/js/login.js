@@ -229,7 +229,7 @@ function UsuariosPorUsername(tipo) {
                                 }
                             }
                         } else {
-                            Alert('Usuario o contraseña incorrecto! op2'); 
+                            Alert('Usuario o contraseña incorrecto!'); 
                             $.mobile.hidePageLoadingMsg();
                             $("#password").val('');
                             //El servicio de DNN no existe ahora
