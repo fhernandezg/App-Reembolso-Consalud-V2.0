@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="cl.enlacedesign.reembolsoMovil" version="1.2.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="cl.enlacedesign.reembolsoMovil" version="1.2.2">
     <name>Reembolso Móvil Consalud</name>
     <description>Reembolso Móvil Consalud</description>
     <author email="appstore@consalud.cl" href="http://www.consalud.cl">Isapre Consalud S.A</author>
