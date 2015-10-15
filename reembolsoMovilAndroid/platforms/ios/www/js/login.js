@@ -270,7 +270,7 @@ function enviarClave() {
                         '<soap:Body>' +
                         '<SendPassword xmlns="Consalud.Framework.DMZ.Servicios">' +
                         '<Rut>' + rut[0] + '</Rut>' +
-                        '<dVerificador></dVerificador>' +
+                        '<dVerificador>' + rut[1] + '</dVerificador>' +
                         '</SendPassword>' +
                         '</soap:Body>' +
                         '</soap:Envelope>';
