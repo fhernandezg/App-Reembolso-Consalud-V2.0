@@ -2,7 +2,7 @@
 
 // Cambiar ambiente.
 // 0 = testing ; 1 = produccion
-var ambiente = 0; 
+var ambiente = 1; 
 
 // URL de los servicios.
 var urlBase = (ambiente === 1) 
